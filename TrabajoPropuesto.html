@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Personal</title>
+    <link rel="stylesheet" href="TrabajoPropuesto.css">
+    <style>
+        /* Agrega estilos CSS personalizados aquí */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Página Personal</h1>
+    </header>
+    <div class="container">
+        <img id="avatar" src="foto.jpeg" alt="Tu Avatar">
+        <h2>Sobre Mí</h2>
+        <p>Mi nombre es Kevin Daniel Caya Poma, pero mis amigos me dicen panda.</p>
+
+        <h2>Intereses</h2>
+        <p>Me apasiona la programación y la tecnología. En mi tiempo libre, me gusta jugar voley o videojuegos también dibujo retratos de personas. Algun día me gustaría viajar en crucero y conocer todo el mundo y ir a un safari a conocer la vida salvaje.</p>
+        
+        <button id="mostrarIntereses">Mostrar más</button>
+        <div id="interesesCompletos" style="display: none;">
+            <p>
+                Me gusta la escuchar musica mientras realizo mis tareas o dibujos eso me ayuda
+                relagarme, le temo a las altura, pero me gustaria viajar en avion.
+            </p>
+            <p>
+                Actualmente tengo una mascota, pero en un futuro me gustaria tener 2 mas 
+                un gato y un loro, en mi infancia cuando vivia con mis abuelitos tuve un loro 
+                pero lamentablemente se murio y me marco mucho por que era mi mejor amigo.
+            </p>
+            <p>
+                Me gusta la reposteria, tuve la oportunidad de porder trabajar en una pasteleria
+                y aprendi mucho de mi amiga la dueña, lamentablemente tuve que viajar a arequipa 
+                y corte relacion con ella.
+            </p>
+            <button id="ocultarIntereses">Mostrar menos</button>
+        </div>
+
+        <h2>Formación</h2>
+        <p>Actualmente estoy estudiando en Tecsup la carrera de Diseño y desarrollo de Software, me encuentro en el 3 ciclo.</p>
+        
+        <button id="mostrarOtrosIntereses">Mostrar más</button>
+        <div id="otrosIntereses" style="display: none;">
+            <p>
+                Estudie por casi tres años en el instituto de idiomas Cultural, lamentablemente no puede seguir
+                por problemas personales, pero me gustos mucho el idioma gracias a ellos puede conocer gente 
+                mucho mas abierta en conocimientos. Me gustaria retomar mis estudios cuando termine mi 
+                carrera.
+            </p>
+            <button id="OcultarIntereses">Mostra menos</button>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com/kevindaniel.cayapoma/?locale=es_LA" target="_blank">
+                <img src="iconofacebook.jpg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/kevin_paradise13/" target="_blank">
+                <img src="iconoInstagram.webp" class="instagram" alt="Instagram">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        
+        const avatar = document.getElementById('avatar');
+        const imagenOriginal = 'foto.jpeg';
+        const nuevaImagen = 'avatar.jpg';
+
+        
+        function cambiarImagenAvatar() {
+            if (avatar.src.includes(imagenOriginal)) {
+                avatar.src = nuevaImagen;
+                avatar.alt = 'Nuevo Avatar';
+            } else {
+                avatar.src = imagenOriginal;
+                avatar.alt = 'Tu Avatar';
+            }
+        }
+
+    
+    avatar.addEventListener('click', cambiarImagenAvatar);
+
+     
+        const botonMostrar = document.getElementById('mostrarIntereses');
+        const interesesCompletos = document.getElementById('interesesCompletos');
+        const botonOcultar = document.getElementById('ocultarIntereses');
+
+        botonMostrar.addEventListener('click', function() {
+            interesesCompletos.style.display = 'block';
+            botonMostrar.style.display = 'none';
+        });
+
+        botonOcultar.addEventListener('click', function() {
+            interesesCompletos.style.display = 'none';
+            botonMostrar.style.display = 'block';
+        });
+    
+        const botonMostrarOtros = document.getElementById('mostrarOtrosIntereses');
+        const otrosIntereses = document.getElementById('otrosIntereses');
+        const BotonOcultar = document.getElementById('OcultarIntereses');
+
+        botonMostrarOtros.addEventListener('click', function() {
+            otrosIntereses.style.display = 'block';
+            botonMostrarOtros.style.display = 'none';
+        });
+
+        BotonOcultar.addEventListener('click', function() {
+            otrosIntereses.style.display = 'none';
+            botonMostrarOtros.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

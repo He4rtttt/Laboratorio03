@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('fondo.jpeg'); /* Reemplaza 'tu_fondo.jpg' con la URL de tu imagen de fondo */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el encabezado */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+h1 {
+    font-size: 36px;
+}
+h2{
+    color: rgba(64, 64, 36, 0.7);
+}
+
+#avatar {
+    max-width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(201, 200, 155, 0.7); /* Fondo semi-transparente para el contenido */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(6, 38, 39);
+}
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-media img {
+    width: 30px; /* Tamaño de los íconos de redes sociales */
+    height: 30px;
+    border-radius: 10px;
+}
+.instagram{
+    width: 50px; /* Tamaño de los íconos de redes sociales */
+    height: 50px;
+}
+
+/* Estilos de hover para resaltar los íconos cuando se pasa el ratón por encima */
+.social-media a:hover {
+    transform: scale(1.2);
+}

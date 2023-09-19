@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Cambio</title>
+    <link rel="stylesheet" href="ejer05.css">
+    
+   
+</head>
+<body>
+    <h1>Casa de Cambio</h1>
+    <form id="formularioCambio">
+        <div>
+            <label>Moneda de Origen:</label>
+        </div>
+        <div>
+            <input type="radio" name="monedaOrigen" value="dolares" id="dolaresOrigen" checked>
+            <label for="dolaresOrigen">Dólares</label>
+            <input type="radio" name="monedaOrigen" value="soles" id="solesOrigen">
+            <label for="solesOrigen">Soles</label>
+            <input type="radio" name="monedaOrigen" value="euros" id="eurosOrigen">
+            <label for="eurosOrigen">Euros</label>
+        </div>
+        <div>
+            <label>Moneda de Destino:</label>
+        </div>
+        <div>
+            
+            <input type="radio" name="monedaDestino" value="dolares" id="dolaresDestino">
+            <label for="dolaresestino">Dólares</label>
+            <input type="radio" name="monedaDestino" value="soles" id="solesDestino">
+            <label for="solesDestino">Soles</label>
+            <input type="radio" name="monedaDestino" value="euros" id="eurosDestino">
+            <label for="eurosDestino">Euros</label>
+        </div>
+        <div>
+            <label for="cantidad">Ingrese monto:</label>
+            <input type="number" id="cantidad" step="0.01" required>
+        </div>
+        <button type="button" id="calcularBoton">Calcular</button>
+    </form>
+    <script>
+        document.getElementById("calcularBoton").addEventListener("click", function() {
+
+            const monedaOrigen = document.querySelector('input[name="monedaOrigen"]:checked').value;
+            const monedaDestino = document.querySelector('input[name="monedaDestino"]:checked').value;
+            const cantidad = parseFloat(document.getElementById("cantidad").value);
+
+
+            const tasasDeCambio = {
+                dolares: {
+                    soles: 3.75,
+                    euros: 0.85
+                },
+                soles: {
+                    dolares: 0.27,
+                    euros: 0.23
+                },
+                euros: {
+                    dolares: 1.18,
+                    soles: 4.34
+                }
+            };
+
+            const tasaDeCambio = tasasDeCambio[monedaOrigen][monedaDestino];
+            const total = cantidad * tasaDeCambio;
+
+
+            const mensaje = `Total a recibir: ${total.toFixed(2)} ${monedaDestino}`;
+            alert(mensaje);
+        });
+    </script>
+
+</body>
+</html>
